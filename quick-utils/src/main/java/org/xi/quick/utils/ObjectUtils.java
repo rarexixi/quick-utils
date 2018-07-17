@@ -5,16 +5,6 @@ import java.util.Map;
 
 public class ObjectUtils {
 
-    public static boolean isNullOrEmpty(Object... objects) {
-
-        for (Object object : objects) {
-            if (isNullOrEmpty(object)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public static boolean isNullOrEmpty(Object object) {
         if (object == null) {
             return true;
