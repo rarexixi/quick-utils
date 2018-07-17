@@ -1,4 +1,4 @@
-package org.xi.quick.utils.webapi;
+package org.xi.quick.utils.web;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
