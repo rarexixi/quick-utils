@@ -9,6 +9,7 @@ import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.xi.quick.utils.web.UrlUtil;
 
 import java.io.IOException;
 import java.util.Map;
@@ -95,7 +96,7 @@ public class WebRequestUtils {
     public static String get(String url, Map<String, String> parameters, Map<String, String> headers, String encoding) throws IOException {
 
         if (StringUtils.isBlank(url)) return "";
-        url = getUrl(url, parameters);
+        url = UrlUtil.getUrl(url, parameters);
 
         HttpGet httpGet = new HttpGet(url);
         setHeaders(httpGet, headers);
@@ -183,7 +184,7 @@ public class WebRequestUtils {
     public static String post(String url, Map<String, String> parameters, Map<String, String> headers, String postBody, String encoding) throws IOException {
 
         if (StringUtils.isBlank(url)) return "";
-        url = getUrl(url, parameters);
+        url = UrlUtil.getUrl(url, parameters);
 
         HttpPost httpPost = new HttpPost(url);
         setHeaders(httpPost, headers);
@@ -226,25 +227,5 @@ public class WebRequestUtils {
         HttpResponse response = client.execute(request);
         String html = EntityUtils.toString(response.getEntity(), encoding);
         return html;
-    }
-
-    /**
-     * 获取路径
-     *
-     * @param url        文件夹路径
-     * @param parameters 路径参数
-     * @return
-     */
-    private static String getUrl(String url, Map<String, String> parameters) {
-
-        if (url == null || url.isEmpty()) return "";
-
-        if (parameters != null && !parameters.isEmpty()) {
-            String param = parameters.entrySet().stream()
-                    .map(entry -> entry.getKey() + "=" + entry.getValue())
-                    .reduce("", (s1, s2) -> s1 + "&" + s2);
-            url += (url.contains("?") ? "&" : "?") + param;
-        }
-        return url;
     }
 }
