@@ -15,6 +15,10 @@ import java.util.Map;
 
 public class WebRequestUtils {
 
+    public enum RequestType {
+        GET, POST
+    }
+
     public static final String DEFAULT_ENCODING = "utf-8";
 
     /**

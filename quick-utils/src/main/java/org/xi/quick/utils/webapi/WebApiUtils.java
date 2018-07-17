@@ -20,14 +20,14 @@ public class WebApiUtils {
      * @return
      * @throws IOException
      */
-    public static <T> T getResult(String url, String requestType, TypeReference<T> typeReference) throws IOException {
+    public static <T> T getResult(String url, WebRequestUtils.RequestType requestType, TypeReference<T> typeReference) throws IOException {
 
         String responseResult;
-        switch (requestType.toLowerCase()) {
-            case "get":
+        switch (requestType) {
+            case GET:
                 responseResult = WebRequestUtils.get(url);
                 break;
-            case "post":
+            case POST:
                 responseResult = WebRequestUtils.get(url);
                 break;
             default:
@@ -49,16 +49,16 @@ public class WebApiUtils {
      * @return
      * @throws IOException
      */
-    public static <T> T getResult(String url, String requestType, RequestModel requestModel, TypeReference<T> typeReference) throws IOException {
+    public static <T> T getResult(String url, WebRequestUtils.RequestType requestType, RequestModel requestModel, TypeReference<T> typeReference) throws IOException {
 
         if (requestModel == null) return getResult(url, requestType, typeReference);
 
         String responseResult;
-        switch (requestType.toLowerCase()) {
-            case "get":
+        switch (requestType) {
+            case GET:
                 responseResult = WebRequestUtils.get(url, requestModel.getParamMap(), requestModel.getHeaderMap(), requestModel.getEncoding());
                 break;
-            case "post":
+            case POST:
                 responseResult = WebRequestUtils.post(url, requestModel.getParamMap(), requestModel.getHeaderMap(), requestModel.getPostBody(), requestModel.getEncoding());
                 break;
             default:
