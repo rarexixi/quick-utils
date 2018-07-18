@@ -7,7 +7,7 @@ import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.Map;
 
-public class UrlUtil {
+public class UrlUtils {
 
     /**
      * 拼接url

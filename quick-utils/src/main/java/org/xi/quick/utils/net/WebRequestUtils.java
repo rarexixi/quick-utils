@@ -9,7 +9,7 @@ import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
-import org.xi.quick.utils.web.UrlUtil;
+import org.xi.quick.utils.web.UrlUtils;
 
 import java.io.IOException;
 import java.util.Map;
@@ -96,7 +96,7 @@ public class WebRequestUtils {
     public static String get(String url, Map<String, String> parameters, Map<String, String> headers, String encoding) throws IOException {
 
         if (StringUtils.isBlank(url)) return "";
-        url = UrlUtil.getUrl(url, parameters);
+        url = UrlUtils.getUrl(url, parameters);
 
         HttpGet httpGet = new HttpGet(url);
         setHeaders(httpGet, headers);
@@ -184,7 +184,7 @@ public class WebRequestUtils {
     public static String post(String url, Map<String, String> parameters, Map<String, String> headers, String postBody, String encoding) throws IOException {
 
         if (StringUtils.isBlank(url)) return "";
-        url = UrlUtil.getUrl(url, parameters);
+        url = UrlUtils.getUrl(url, parameters);
 
         HttpPost httpPost = new HttpPost(url);
         setHeaders(httpPost, headers);
