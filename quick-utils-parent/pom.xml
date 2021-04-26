@@ -25,7 +25,7 @@
         <apache-httpclient.version>4.5.3</apache-httpclient.version>
         <poi.version>3.17</poi.version>
         <commons-net.version>3.6</commons-net.version>
-        <commons-io.version>2.6</commons-io.version>
+        <commons-io.version>2.7</commons-io.version>
 
         <junit.version>4.12</junit.version>
     </properties>
