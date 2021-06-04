@@ -22,7 +22,7 @@
         <fastjson.version>1.2.47</fastjson.version>
 
         <commons-lang3.version>3.7</commons-lang3.version>
-        <apache-httpclient.version>4.5.3</apache-httpclient.version>
+        <apache-httpclient.version>4.5.13</apache-httpclient.version>
         <poi.version>3.17</poi.version>
         <commons-net.version>3.6</commons-net.version>
         <commons-io.version>2.6</commons-io.version>
